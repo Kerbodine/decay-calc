@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Result from "./Result";
-var Latex = require("react-latex");
+import Select from "./Select";
 
 export default function Calculator() {
   const [halfLife, setHalfLife] = useState(null);
@@ -27,8 +27,6 @@ export default function Calculator() {
     );
   };
 
-  let formula = `t=t_{1/2}\times\frac{log(\%)}{log(\frac{1}{2})}`;
-
   return (
     <div>
       <div className="w-80 border-gray-200 border-2 rounded-xl p-8 shadow-md">
@@ -36,7 +34,8 @@ export default function Calculator() {
           Half-life Calculator
         </h1>
         <h2 className="text-md text-gray-500 mb-2">Created by Michael Tong</h2>
-        <h3 className="text-gray-700 text-sm font-semibold">Formula:</h3>
+        <Select />
+        <h3 className="text-gray-700 text-sm font-semibold mt-2">Formula:</h3>
         <img src="/formula.png" className="w-36 mb-4" />
         <div className="my-2">
           <h3 className="text-gray-700 text-sm font-semibold">
